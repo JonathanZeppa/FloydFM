@@ -1,0 +1,35 @@
+# CMake / MSVC build tree. Contains the FetchContent JUCE clone and bakes
+# absolute paths, so it is never committed -- the first build regenerates it.
+build/
+out/
+cmake-build-*/
+
+# MSVC / IDE
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# macOS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Transient
+pv-tmp.txt
+
+# Reference frames from Floyd Steinberg's video, shared into the working
+# tree by Jonathan to show the original gradient behaviour. Not ours to
+# publish -- kept on disk, never committed.
+screenshots/
+
+# Internal working documents -- kept on disk, never published.
+# The logfile is the build narrative and also discusses other Zedtronics
+# products' internals; CLAUDE.md is an internal pointer card. Neither
+# belongs in a repo that may go public.
+floydfm-logfile.md
+CLAUDE.md
