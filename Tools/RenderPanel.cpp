@@ -90,12 +90,25 @@ static int audioTest()
     // the per-voice gain staging; the C-major triad + octave shows what
     // coherent polyphonic summing does on top of it. Both are the
     // handoff's own ear-audit criteria.
-    auto run = [&] (const std::vector<int>& notes, float& peak, float& rms, bool& sawNaN)
+    // `wheel` < 0 leaves the pitch wheel alone; otherwise it is sent as a
+    // 14-bit pitch-bend message one block after the note-on, i.e. into a
+    // sounding voice, which is the case that exercises the mid-note
+    // re-push rather than just the note-on snapshot.
+    // Rising zero crossings over the SECOND HALF of the run, i.e. after
+    // any pitch-wheel message has landed. It is a crude pitch proxy, but
+    // it is the only thing here that can prove the wheel actually changed
+    // the frequency rather than merely failing to crash.
+    int lastCrossings = 0;
+
+    auto run = [&] (const std::vector<int>& notes, int velocity, int wheel,
+                    float& peak, float& rms, bool& sawNaN)
     {
         juce::AudioBuffer<float> buffer (2, blockSize);
         peak = 0.0f; rms = 0.0f; sawNaN = false;
         double sumSq = 0.0;
         int    total = 0;
+        int    crossings = 0;
+        float  prev = 0.0f;
         apvts->resetPreLimiterPeak();
 
         for (int b = 0; b < numBlocks; ++b)
@@ -103,7 +116,10 @@ static int audioTest()
             juce::MidiBuffer midi;
             if (b == 0)
                 for (int n : notes)
-                    midi.addEvent (juce::MidiMessage::noteOn (1, n, (juce::uint8) 100), 0);
+                    midi.addEvent (juce::MidiMessage::noteOn (1, n, (juce::uint8) velocity), 0);
+
+            if (b == 1 && wheel >= 0)
+                midi.addEvent (juce::MidiMessage::pitchWheel (1, wheel), 0);
 
             buffer.clear();
             processor->processBlock (buffer, midi);
@@ -115,12 +131,25 @@ static int audioTest()
                 peak = juce::jmax (peak, std::abs (v));
                 sumSq += (double) v * (double) v;
                 ++total;
+
+                if (b >= numBlocks / 2 && prev <= 0.0f && v > 0.0f)
+                    ++crossings;
+
+                prev = v;
             }
         }
+
+        lastCrossings = crossings;
 
         juce::MidiBuffer off;
         for (int n : notes)
             off.addEvent (juce::MidiMessage::noteOff (1, n), 0);
+
+        // Recentre so the next case starts from an unbent state. Note Off
+        // deliberately does not do this (MIDI spec), so the harness must.
+        if (wheel >= 0)
+            off.addEvent (juce::MidiMessage::pitchWheel (1, 8192), 0);
+
         buffer.clear();
         processor->processBlock (buffer, off);
 
@@ -152,11 +181,18 @@ static int audioTest()
     constexpr float kMaxGRSingle = 1.5f;
     constexpr float kMaxGRChord  = 3.0f;
 
+    // Velocity 127, NOT the 100 this table used through v0.1.0. Velocity
+    // now scales carriers too, so full velocity is the loudest a preset
+    // can be -- a gain-staging gate has to measure the worst case. It is
+    // also the case that must be IDENTICAL to v0.1.0: at velocity 1.0 the
+    // sensitivity term collapses to 1 whatever op.velSens holds.
+    constexpr int kGateVelocity = 127;
+
     auto measure = [&] (const std::vector<int>& notes, float limit, float& gr, bool& bad)
     {
         float peak = 0.0f, rms = 0.0f;
         bool  nan  = false;
-        run (notes, peak, rms, nan);
+        run (notes, kGateVelocity, -1, peak, rms, nan);
 
         const float pre = apvts->getPreLimiterPeak();
         gr = (pre > peak && peak > 0.0f)
@@ -186,7 +222,7 @@ static int audioTest()
                  floyd::kSoftKneeThreshold, floyd::kOutputTrim);
     std::printf ("Budget: %.1f dB on one note, %.1f dB on a chord.\n\n",
                  kMaxGRSingle, kMaxGRChord);
-    std::printf ("--- factory presets, velocity 100 ---\n");
+    std::printf ("--- factory presets, velocity %d (loudest case) ---\n", kGateVelocity);
     std::printf ("%-14s %-6s %7s %7s %8s %7s  %s\n",
                  "PRESET", "ALG", "C4 PEAK", "GR dB", "CHD PEAK", "GR dB", "VERDICT");
 
@@ -209,6 +245,102 @@ static int audioTest()
         report (floyd::kAlgorithms[(std::size_t) a].name,
                 juce::String ("ALG " + juce::String (floyd::kAlgorithms[(std::size_t) a].display))
                     .toRawUTF8());
+    }
+
+    // ------------------------------------------------------------------
+    //  Velocity response (per-operator sensitivity, added 2026-08-01)
+    // ------------------------------------------------------------------
+    //  Proves three things the peak/GR tables cannot:
+    //    - a soft note is genuinely quieter than a hard one, i.e. carrier
+    //      velocity is actually wired (v0.1.0 would print a flat row);
+    //    - the response is monotonic, so no preset gets LOUDER when played
+    //      softer through some sign error;
+    //    - ORGAN stays flat, because its four op velSens are all 0. That
+    //      row is the regression check that velSens = 0 still reproduces
+    //      v0.1.0 behaviour exactly.
+    std::printf ("\n--- velocity response, single C4 (peak by velocity) ---\n");
+    std::printf ("%-14s %8s %8s %8s  %s\n", "PRESET", "VEL 20", "VEL 64", "VEL 127", "VERDICT");
+
+    for (int i = 0; i < floyd::kNumPresets; ++i)
+    {
+        processor->setCurrentProgram (i);
+
+        float p[3] { 0.0f, 0.0f, 0.0f }, rms = 0.0f;
+        bool  nan = false, anyNaN = false;
+        const int vels[3] { 20, 64, 127 };
+
+        for (int k = 0; k < 3; ++k)
+        {
+            run (single, vels[k], -1, p[k], rms, nan);
+            anyNaN = anyNaN || nan;
+        }
+
+        const bool isOrgan  = juce::String (floyd::presetAt (i).name) == "ORGAN";
+        const bool flat     = std::abs (p[2] - p[0]) < 1.0e-5f;
+
+        // 0.5% slack: the onset ramp and limiter make exact equality the
+        // wrong test for "did not get quieter".
+        const bool monotonic = (p[1] <= p[2] * 1.005f) && (p[0] <= p[1] * 1.005f);
+        const bool responds  = isOrgan ? flat : (p[0] < p[2] * 0.95f);
+        const bool bad       = anyNaN || ! monotonic || ! responds;
+
+        if (bad) ++failures;
+
+        std::printf ("%-14s %8.4f %8.4f %8.4f  %s%s\n",
+                     floyd::presetAt (i).name, p[0], p[1], p[2],
+                     bad ? "FAIL" : "ok",
+                     isOrgan ? "   (flat by design -- no velocity on a drawbar organ)" : "");
+    }
+
+    // ------------------------------------------------------------------
+    //  Pitch bend (added 2026-08-01)
+    // ------------------------------------------------------------------
+    //  ORGAN is the probe: ADDITIVE, all four operators sustaining, OP1 at
+    //  ratio 1.00, so the output is periodic enough for a zero-crossing
+    //  count to track pitch. The wheel is sent one block AFTER the note-on,
+    //  so this exercises the mid-note re-push, not just the note-on
+    //  snapshot. Expected ratio at the default +/-2 semitones is
+    //  2^(2/12) = 1.1225 up and 0.8909 down.
+    std::printf ("\n--- pitch bend, ORGAN held C4, bend_range default ---\n");
+    processor->setCurrentProgram (6);   // ORGAN
+
+    {
+        const int   wheels[3] { 0, 8192, 16383 };
+        const char* labels[3] { "wheel down", "wheel centre", "wheel up" };
+        int   cross[3] { 0, 0, 0 };
+        bool  anyNaN = false;
+
+        std::printf ("%-14s %10s %10s  %s\n",
+                     "POSITION", "PEAK", "CROSSINGS", "VERDICT");
+
+        // Ratios are printed AFTER the loop -- the centre count is the
+        // divisor and it does not exist until its own row has run.
+        for (int k = 0; k < 3; ++k)
+        {
+            float peak = 0.0f, rms = 0.0f;
+            bool  nan  = false;
+            run (single, 127, wheels[k], peak, rms, nan);
+            cross[k] = lastCrossings;
+            anyNaN   = anyNaN || nan;
+
+            const bool bad = nan || peak < 0.001f || peak > 1.001f;
+            if (bad) ++failures;
+
+            std::printf ("%-14s %10.4f %10d  %s\n",
+                         labels[k], peak, cross[k], bad ? "FAIL" : "ok");
+        }
+
+        // The crossing count must actually move, and in the right
+        // direction. A wheel wired to nothing prints three identical rows.
+        const bool  moved   = cross[0] < cross[1] && cross[1] < cross[2];
+        const float ratioDn = cross[1] > 0 ? (float) cross[0] / (float) cross[1] : 0.0f;
+        const float ratioUp = cross[1] > 0 ? (float) cross[2] / (float) cross[1] : 0.0f;
+
+        if (! moved || anyNaN) ++failures;
+
+        std::printf ("measured %.4f down / %.4f up (expect 0.8909 / 1.1225 at +/-2 semitones): %s\n",
+                     ratioDn, ratioUp,
+                     moved ? "ok" : "FAIL -- wheel had no effect or is inverted");
     }
 
     processor->releaseResources();

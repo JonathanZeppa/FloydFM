@@ -36,8 +36,13 @@ Working title. The plugin code (`Flfm`) and name are provisional.
   fixed absolute time axis, so a fast modulator dying under a slow carrier is
   visible rather than hidden. Three drag handles on the selected operator set
   attack/amount, decay/sustain, and release.
-- **8-voice polyphony**, velocity scaling modulator depth (play harder ->
-  brighter, not just louder).
+- **8-voice polyphony** with **per-operator velocity sensitivity**, the DX7
+  model: each operator has its own `OP{n} Velocity` amount, so playing harder
+  drives the modulators (brighter) and the carriers (louder) by whatever
+  proportion the patch calls for. E PIANO leans on the modulators, ORGAN sits
+  at zero on all four because a drawbar organ has no velocity response.
+  `Velocity Amount` is the global master depth over the four.
+- **Pitch wheel**, `Pitch Bend Range` 0 to 12 semitones, default 2.
 - **10 factory presets.**
 - **Drag-to-zoom**, 0.75x to 2.0x, aspect locked, persisted with the session.
 - **Arrow-key navigation**, circular in both directions: left/right steps
@@ -105,7 +110,15 @@ $h = "build\FloydFMRender_artefacts\Release\FloydFMRender.exe"
 `--audio-test` reports peak level and, crucially, how much gain reduction the
 master limiter applied. Output peak alone cannot reveal an over-hot signal
 buried in a limiter -- the limiter asymptotes at unity, so the level looks fine
-while the sound is being distorted.
+while the sound is being distorted. It runs the gain-staging tables at velocity
+127, because that is the loudest a preset can be and a gain-staging check has to
+measure the worst case.
+
+It then sweeps velocity 20 / 64 / 127 per preset and bends the pitch wheel on a
+sustained note. Both sections assert the relationship the feature promises --
+peak rises monotonically with velocity, pitch actually moves with the wheel --
+rather than merely checking for NaNs, so a build where either feature was
+silently unwired would fail rather than pass.
 
 ---
 
@@ -157,7 +170,9 @@ a four-note chord; both currently sit under 0.4 dB, meaning the limiter is not
 colouring ordinary playing.
 
 The factory presets have been ear-audited and sound like their intended
-instruments.
+instruments. Their per-operator velocity values were ear-checked separately on
+2026-08-01; they vary in how pronounced the effect is by design, from an
+electric piano that leans on it to an organ that ignores it.
 
 Known gaps:
 
@@ -236,6 +251,71 @@ operator's identity colour, moving along its own line with the playhead.
 The metric lives in `Source/UI/Brightness.h` and reads the same envelope math the
 voice ticks and the same routing table the voice renders through, so the picture
 cannot drift from the sound.
+
+### Velocity, per operator
+
+Added 2026-08-01, at Floyd's suggestion:
+
+> If you want to add one more thing crucial to FM synths, that'd be velocity for
+> the carriers and modulators. It makes the pianos and pads come alive: the
+> stronger you hit the keyboard, the stronger the modulation.
+
+Velocity sensitivity is a property of the **operator**, the way it is on a DX7,
+not a property of whether that operator happens to be a carrier right now:
+
+```
+s            = velocity_amt * op{n}_vel
+effectiveAmp = op{n}_amp * (1 - s + s * velocity)
+```
+
+Earlier builds scaled modulators only and exempted carriers outright. That was
+faithful to the original spec but it tied one control's meaning to another's
+value: OP4 is a carrier in STACK and a carrier in ADDITIVE, but OP1 is a
+modulator in one and a carrier in the other, so switching algorithm silently
+changed how hard the patch responded to the keyboard. Putting the sensitivity on
+the operator removes the coupling -- `effectiveAmp` does not consult the
+algorithm at all.
+
+Both older behaviours remain reachable, which is the useful part: an operator at
+`1.0` responds fully, and an operator at `0.0` ignores the keyboard entirely.
+ORGAN ships with all four at zero, because a drawbar organ has no velocity
+response and faking one would be wrong. Expect the presets to differ in how
+obvious this is -- a bell or an electric piano lives on the effect, a pad is
+meant to be subtle, and an organ deliberately does nothing at all.
+
+`Velocity Amount` survives as the global master depth over the four, so one
+control still scales the whole instrument's touch response.
+
+At full velocity the sensitivity term is exactly 1 whatever the per-operator
+value holds, so velocity can only ever attenuate: the loudest a preset can be is
+unchanged, and the gain staging above is untouched by any of this.
+
+The pitch wheel arrived in the same pass. Wheel position times `Pitch Bend
+Range` resolves to a single frequency multiplier for the whole patch, applied
+alongside ratio and detune, and it is re-pushed at the wheel event itself rather
+than at the next block boundary so a bend lands mid-note.
+
+---
+
+## Changelog
+
+### 2026-08-01 -- per-operator velocity, pitch wheel
+
+- **`OP{n} Velocity`**, four new parameters, one per operator, stored per
+  preset. Velocity now drives carriers as well as modulators, weighted per
+  operator. See "Velocity, per operator" above.
+- **`Pitch Bend Range`**, 0 to 12 semitones, default 2. The pitch wheel was
+  previously ignored entirely.
+- `Velocity Amount` keeps its meaning as the global master depth. 37 parameters
+  now, up from 32.
+- The DSP smoke test gained a velocity-response sweep and a pitch-bend check,
+  and moved its gain-staging tables to velocity 127.
+- Revalidated: pluginval 5, 7, and 10 (three runs at level 10), all passing.
+
+### 2026-07-31 -- initial public release
+
+Four operators, eight algorithms, the shared-axis envelope editor, the
+brightness gradient and playhead dots, ten factory presets, VST3 / AU / LV2.
 
 ---
 

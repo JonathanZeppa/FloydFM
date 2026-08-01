@@ -62,8 +62,8 @@ public:
         increment = frequencyHz / (float) sr;
     }
 
-    // Amplitude is pushed per block: it is op{n}_amp, already
-    // velocity-scaled by the voice for modulators.
+    // Amplitude is pushed per block: it is op{n}_amp, already scaled by
+    // the voice through this operator's own velocity sensitivity.
     void setAmplitude (float a) noexcept { amp = a; }
 
     // OP1 self-feedback, one-sample delayed (handoff, "Feedback").

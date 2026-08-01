@@ -80,6 +80,7 @@ private:
 
     void cacheParameterPointers();
     void pushParameters();
+    void updatePitchBend();
     void applyPreset (int index);
     void updatePlayhead (int numSamples);
 
@@ -98,17 +99,24 @@ private:
         std::atomic<float>* amp     = nullptr;
         std::atomic<float>* ratio   = nullptr;
         std::atomic<float>* detune  = nullptr;
+        std::atomic<float>* vel     = nullptr;
     };
 
     std::array<OpPointers, floyd::kNumOps> opPtr;
     std::atomic<float>* algorithmPtr   = nullptr;
     std::atomic<float>* feedbackPtr    = nullptr;
     std::atomic<float>* velocityAmtPtr = nullptr;
+    std::atomic<float>* bendRangePtr   = nullptr;
     std::atomic<float>* masterLevelPtr = nullptr;
 
     std::atomic<int> currentProgram { 0 };
     int  lastAlgorithm  = -1;
     double currentSampleRate = 44100.0;
+
+    // Pitch wheel, 14-bit MIDI: 0..16383, centre 8192. Audio thread only.
+    // Held as raw wheel position rather than as semitones so a bend_range
+    // change while the wheel is off-centre takes effect immediately.
+    int pitchWheelPosition = 8192;
 
     // Playhead bookkeeping (audio thread only).
     int    playheadNoteCount = 0;

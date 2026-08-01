@@ -14,11 +14,35 @@
 //
 //  Handoff, "DSP Notes":
 //    Frequency  = noteHz * ratio * detuneFactor, detuneFactor = 2^(cents/1200)
-//    Velocity   = scales MODULATOR amp only, never carrier amp:
-//                 effectiveAmp = amp * (1 - velAmt + velAmt * vel)
-//                 "Play harder -> brighter, not just louder."
 //    Note-on-only: envelope times and initial ratio resolve once at
 //                  note-on, not per block.
+//
+//  VELOCITY -- SUPERSEDES THE HANDOFF (2026-08-01).
+//  The handoff (and this plugin through v0.1.0) scaled MODULATOR amp
+//  only, never carrier amp, from one global `velocity_amt`. Floyd asked
+//  for velocity on the carriers as well -- "it makes the pianos and pads
+//  come alive" -- and Jonathan chose the DX7/TX81Z model to deliver it:
+//  velocity sensitivity is a PER-OPERATOR property of the patch, not a
+//  property of the operator's current role in the algorithm.
+//
+//      s             = velocityAmount * op.velSens      // 0..1
+//      effectiveAmp  = amp * (1 - s + s * velocity)
+//
+//  Same formula shape as before, in one place, now applied to every
+//  operator. `velocity_amt` survives as the global master depth, so
+//  op.velSens = 1 with the default 0.7 reproduces the old modulator
+//  response exactly, and op.velSens = 0 reproduces the old carrier
+//  response exactly (ORGAN sets all four to 0 for precisely that).
+//
+//  Role-independence is the point of the DX7 model: an operator that is
+//  a carrier in ADDITIVE and a modulator in STACK keeps ONE sensitivity,
+//  so changing algorithm can no longer silently change how hard the
+//  patch responds to the keyboard.
+//
+//  PITCH BEND. The handoff never mentions the wheel; added 2026-08-01.
+//  The processor resolves wheel position * bend_range into a frequency
+//  MULTIPLIER once per block (one pow, not one per operator per voice)
+//  and the voice folds it into frequencyFor alongside ratio and detune.
 // =====================================================================
 
 namespace floyd
@@ -30,6 +54,7 @@ struct OpParams
     float     amp         = 0.0f;
     int       ratioIndex  = kDefaultRatioIndex;
     float     detuneCents = 0.0f;
+    float     velSens     = 1.0f;   // per-operator velocity sensitivity, 0..1
 };
 
 struct PatchParams
@@ -37,7 +62,8 @@ struct PatchParams
     std::array<OpParams, kNumOps> op {};
     int   algorithmIndex = 0;
     float feedback       = 0.0f;
-    float velocityAmount = 0.7f;
+    float velocityAmount = 0.7f;    // global master depth over op.velSens
+    float pitchBendFactor = 1.0f;   // frequency multiplier, 2^(semitones/12)
 };
 
 class Voice
@@ -80,6 +106,7 @@ public:
 
         algorithm   = &algorithmAt (patch.algorithmIndex);
         renderOrder = computeRenderOrder (*algorithm);
+        bendFactor  = patch.pitchBendFactor;   // before any frequencyFor call
 
         // Carrier-count gain compensation. Carriers sum coherently, so
         // ALG 8 (four carriers) arrives ~2.7x hotter than ALG 1 (one) at
@@ -127,12 +154,16 @@ public:
             o.noteOff();
     }
 
-    // Per-block push. Amp, feedback and detune track live edits; ratio
-    // and envelope times deliberately do not (handoff).
+    // Per-block push. Amp, feedback, detune and pitch bend track live
+    // edits; ratio and envelope times deliberately do not (handoff).
+    // Also re-called mid-block on a pitch-wheel message, so the wheel
+    // resolves at the event rather than at the next block boundary.
     void applyContinuous (const PatchParams& patch) noexcept
     {
         if (! active)
             return;
+
+        bendFactor = patch.pitchBendFactor;
 
         for (int i = 0; i < kNumOps; ++i)
         {
@@ -196,22 +227,23 @@ private:
     float frequencyFor (int op, float detuneCents) const noexcept
     {
         const float detuneFactor = std::pow (2.0f, detuneCents / 1200.0f);
-        return noteHz * heldRatio[(std::size_t) op] * detuneFactor;
+        return noteHz * heldRatio[(std::size_t) op] * detuneFactor * bendFactor;
     }
 
-    // Velocity scales MODULATOR amp only -- never carrier amp.
-    // Uses the voice's OWN algorithm (snapshotted at note-on), not the
-    // live patch index, so a mid-note algorithm change cannot make the
-    // amp role and the routing disagree for one block.
+    // Per-operator velocity sensitivity, DX7-style: an operator's
+    // response to the keyboard is a property of the PATCH, not of its
+    // current role in the algorithm. One formula, every operator.
+    //
+    // The role test that used to live here is gone deliberately -- see
+    // the header comment. It made an operator's velocity response change
+    // whenever the algorithm changed, which is exactly what a
+    // per-operator sensitivity exists to prevent.
     float effectiveAmp (int op, const PatchParams& patch) const noexcept
     {
-        const float amp = patch.op[(std::size_t) op].amp;
+        const auto& o = patch.op[(std::size_t) op];
+        const float s = patch.velocityAmount * o.velSens;
 
-        if (isCarrier (*algorithm, op))
-            return amp;
-
-        const float v = patch.velocityAmount;
-        return amp * (1.0f - v + v * velocity);
+        return o.amp * (1.0f - s + s * velocity);
     }
 
     bool allCarriersFinished() const noexcept
@@ -241,6 +273,7 @@ private:
     std::uint64_t releaseStamp = 0;
 
     float carrierScale = 1.0f;   // 1/sqrt(carrier count), set at note-on
+    float bendFactor   = 1.0f;   // pitch-wheel frequency multiplier
 
     int onsetRampLength = 64;
     int onsetCountdown  = 0;

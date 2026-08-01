@@ -66,6 +66,14 @@ juce::AudioProcessorValueTreeState::ParameterLayout FloydFMAudioProcessor::creat
         layout.add (std::make_unique<juce::AudioParameterFloat> (
             juce::ParameterID { opParamId (n, "detune"), 1 }, tag + "Detune",
             juce::NormalisableRange<float> (-50.0f, 50.0f, 0.1f), 0.0f));
+
+        // Per-operator velocity sensitivity (DX7 model). Default mirrors
+        // preset 001 like the rest of this block. 0 = this operator
+        // ignores the keyboard entirely, which is v0.1.0's carrier
+        // behaviour; 1 = full depth under the global velocity_amt.
+        layout.add (std::make_unique<juce::AudioParameterFloat> (
+            juce::ParameterID { opParamId (n, "vel"), 1 }, tag + "Velocity",
+            juce::NormalisableRange<float> (0.0f, 1.0f, 0.001f), o.vel));
     }
 
     layout.add (std::make_unique<juce::AudioParameterChoice> (
@@ -75,9 +83,18 @@ juce::AudioProcessorValueTreeState::ParameterLayout FloydFMAudioProcessor::creat
         juce::ParameterID { "feedback", 1 }, "Feedback",
         juce::NormalisableRange<float> (0.0f, 1.0f, 0.001f), 0.0f));
 
+    // Global master depth over the four per-operator sensitivities.
+    // Unchanged id, range and default, so sessions and automation saved
+    // against v0.1.0 restore with the same meaning at the top level.
     layout.add (std::make_unique<juce::AudioParameterFloat> (
         juce::ParameterID { "velocity_amt", 1 }, "Velocity Amount",
         juce::NormalisableRange<float> (0.0f, 1.0f, 0.001f), 0.7f));
+
+    // Pitch wheel travel in semitones each way. 2 is the near-universal
+    // synth default; 12 covers whole-octave bends. Global, like
+    // velocity_amt and master_level -- not stored per preset.
+    layout.add (std::make_unique<juce::AudioParameterInt> (
+        juce::ParameterID { "bend_range", 1 }, "Pitch Bend Range", 0, 12, 2));
 
     layout.add (std::make_unique<juce::AudioParameterFloat> (
         juce::ParameterID { "master_level", 1 }, "Master",
@@ -114,11 +131,13 @@ void FloydFMAudioProcessor::cacheParameterPointers()
         p.amp     = apvts.getRawParameterValue (opParamId (n, "amp"));
         p.ratio   = apvts.getRawParameterValue (opParamId (n, "ratio"));
         p.detune  = apvts.getRawParameterValue (opParamId (n, "detune"));
+        p.vel     = apvts.getRawParameterValue (opParamId (n, "vel"));
     }
 
     algorithmPtr   = apvts.getRawParameterValue ("algorithm");
     feedbackPtr    = apvts.getRawParameterValue ("feedback");
     velocityAmtPtr = apvts.getRawParameterValue ("velocity_amt");
+    bendRangePtr   = apvts.getRawParameterValue ("bend_range");
     masterLevelPtr = apvts.getRawParameterValue ("master_level");
 }
 
@@ -145,6 +164,7 @@ void FloydFMAudioProcessor::applyPreset (int index)
         set (opParamId (n, "release"), o.release);
         set (opParamId (n, "amp"),     o.amp);
         set (opParamId (n, "detune"),  0.0f);
+        set (opParamId (n, "vel"),     o.vel);
 
         // Snapped choice -- the mockup's literal ratio maps through one
         // documented rule (DISC-3).
@@ -181,6 +201,9 @@ void FloydFMAudioProcessor::prepareToPlay (double sampleRate, int)
     voiceManager.prepare (sampleRate);
     needsReset.store (false);
 
+    pitchWheelPosition    = 8192;   // centred
+    patch.pitchBendFactor = 1.0f;
+
     playheadNoteCount = 0;
     playheadTime      = 0.0f;
     playheadState.store ((int) PlayheadState::off);
@@ -214,11 +237,14 @@ void FloydFMAudioProcessor::pushParameters()
         dst.amp         = src.amp->load();
         dst.ratioIndex  = (int) src.ratio->load();
         dst.detuneCents = src.detune->load();
+        dst.velSens     = src.vel->load();
     }
 
     patch.algorithmIndex = (int) algorithmPtr->load();
     patch.feedback       = feedbackPtr->load();
     patch.velocityAmount = velocityAmtPtr->load();
+
+    updatePitchBend();
 
     // Algorithm changes are a routing change -- Pattern 3 says set
     // needsReset on those, never on continuous knob movement.
@@ -227,6 +253,31 @@ void FloydFMAudioProcessor::pushParameters()
         lastAlgorithm = patch.algorithmIndex;
         needsReset.store (true);
     }
+}
+
+// Resolves wheel position and bend_range into ONE frequency multiplier
+// for the whole patch. Done here rather than per operator because
+// std::pow x 4 operators x 8 voices per block is real work for a value
+// that is identical across all of them.
+//
+// 14-bit MIDI is asymmetric by design: 0..8191 below centre, 0..8191
+// above, so full-up is 8191/8192 of the nominal range. Not corrected --
+// every synth behaves this way and the error is 0.02 cents at +/-2
+// semitones.
+//
+// No smoothing. Wheel messages arrive dense and 14-bit fine, so the
+// per-message step is far below the audible zipper threshold; this is
+// what juce::Synthesiser::pitchWheelMoved does too. Coarse 7-bit-only
+// controllers would step audibly on a slow sweep -- if that ever comes
+// up, smooth the FACTOR here, not the frequency in the voice.
+void FloydFMAudioProcessor::updatePitchBend()
+{
+    const float range = bendRangePtr->load();               // semitones each way
+    const float norm  = ((float) pitchWheelPosition - 8192.0f) / 8192.0f;
+
+    patch.pitchBendFactor = (range <= 0.0f || pitchWheelPosition == 8192)
+                                ? 1.0f
+                                : std::pow (2.0f, (norm * range) / 12.0f);
 }
 
 void FloydFMAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
@@ -290,6 +341,24 @@ void FloydFMAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
                 playheadTime = 0.0f;
                 playheadState.store ((int) PlayheadState::released);
             }
+        }
+        else if (message.isPitchWheel())
+        {
+            pitchWheelPosition = message.getPitchWheelValue();
+            updatePitchBend();
+
+            // Re-push so the wheel lands at THIS event rather than at the
+            // next block boundary -- the block is already split here, so
+            // the new frequency applies from the very next sample.
+            voiceManager.applyContinuous (patch);
+        }
+        else if (message.isResetAllControllers())
+        {
+            // MIDI spec: Reset All Controllers recentres the wheel.
+            // All Notes Off deliberately does NOT -- it is a note message.
+            pitchWheelPosition = 8192;
+            updatePitchBend();
+            voiceManager.applyContinuous (patch);
         }
         else if (message.isAllNotesOff() || message.isAllSoundOff())
         {

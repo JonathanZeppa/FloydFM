@@ -103,7 +103,8 @@ VT323 only — SIL OFL 1.1, commercial use confirmed. Downloaded as .ttf, embedd
 
 ## Parameters
 
-32 APVTS parameters. `{n}` = 1..4.
+~~32 APVTS parameters.~~ **37 as shipped** — see the SUPERSEDED note below.
+`{n}` = 1..4.
 
 | ID | Name | Type | Range | Default | Unit | Group |
 |----|------|------|-------|---------|------|-------|
@@ -114,10 +115,25 @@ VT323 only — SIL OFL 1.1, commercial use confirmed. Downloaded as .ttf, embedd
 | `op{n}_amp` | OP{n} Amount | float | 0.0–1.0 | see presets | — | Operator {n} |
 | `op{n}_ratio` | OP{n} Ratio | choice | 0–18 (see below) | 3 (=1.00) | × | Operator {n} |
 | `op{n}_detune` | OP{n} Detune | float | -50.0–50.0 | 0.0 | cents | Operator {n} |
+| `op{n}_vel` | OP{n} Velocity | float | 0.0–1.0 | see presets | — | Operator {n} |
 | `algorithm` | Algorithm | choice | 0–7 | 0 | — | Global |
 | `feedback` | Feedback | float | 0.0–1.0 | 0.0 | — | Global |
 | `velocity_amt` | Velocity Amount | float | 0.0–1.0 | 0.7 | — | Global |
+| `bend_range` | Pitch Bend Range | int | 0–12 | 2 | semitones | Global |
 | `master_level` | Master | float | 0.0–1.0 | 0.8 | — | Global |
+
+> **SUPERSEDED 2026-08-01 — `op{n}_vel` and `bend_range` added (rows above).**
+> Floyd asked for velocity on the carriers as well as the modulators
+> ("it makes the pianos and pads come alive"), and Jonathan chose the
+> DX7/TX81Z model to deliver it: a per-operator sensitivity, four new
+> parameters, stored per preset. `velocity_amt` keeps its id, range and
+> default and becomes the global master depth over the four. See the
+> superseded Velocity paragraph under DSP Notes.
+>
+> `bend_range` is a second addition of the same date: this document never
+> mentions the pitch wheel at all, and the plugin ignored it through
+> v0.1.0. Global, not stored per preset, like `velocity_amt` and
+> `master_level`.
 
 ### `op{n}_amp` — contextual meaning
 
@@ -334,7 +350,34 @@ The `1/2π` scaling caps per-stage modulation index and makes cascades sound thi
 
 **Feedback.** OP1 self-feedback, one-sample delayed output summed into its own phase. Re-verify the feedback clamp after confirming the modulation scaling above — a clamp calibrated against scaled modulator output will behave differently.
 
-**Velocity.** Scales modulator `amp` only, never carrier `amp`. `effectiveAmp = amp * (1 - velAmt + velAmt * vel)`. Play harder → brighter, not just louder. This is the expressive core of FM and the reason `velocity_amt` exists as a parameter.
+**Velocity.** ~~Scales modulator `amp` only, never carrier `amp`.~~ `effectiveAmp = amp * (1 - velAmt + velAmt * vel)`. Play harder → brighter, not just louder. This is the expressive core of FM and the reason `velocity_amt` exists as a parameter.
+
+> **SUPERSEDED 2026-08-01 — velocity applies to EVERY operator, weighted per operator.**
+> The formula above is unchanged and still the only one; what changed is
+> which operators it applies to and where its depth comes from. Floyd:
+> *"velocity for the carriers and modulators. It makes the pianos and pads
+> come alive: the stronger you hit the keyboard, the stronger the
+> modulation."* Shipped as the DX7/TX81Z model —
+>
+> ```
+> s            = velocity_amt * op{n}_vel
+> effectiveAmp = op{n}_amp * (1 - s + s * velocity)
+> ```
+>
+> Sensitivity is a per-operator property of the PATCH, not of the
+> operator's current role in the algorithm. The carrier/modulator test
+> that used to gate this is gone deliberately: with it, changing algorithm
+> silently changed how hard the patch responded to the keyboard. Both old
+> behaviours remain reachable — `op{n}_vel = 1` under the default
+> `velocity_amt` of 0.7 is the old modulator response exactly, and
+> `op{n}_vel = 0` is the old carrier response exactly (ORGAN ships with
+> all four at 0, since a drawbar organ has no velocity response).
+>
+> At full velocity the sensitivity term collapses to 1 regardless of
+> `op{n}_vel`, so peak levels — and therefore the whole gain-staging
+> chain — are bit-identical to v0.1.0. Velocity can only ever attenuate.
+
+**Pitch bend.** Not in the original spec; added 2026-08-01. 14-bit wheel × `bend_range` semitones resolves to a single frequency multiplier `2^(norm * range / 12)` applied alongside ratio and detune. Computed once per patch per block rather than per operator per voice, and re-pushed at the wheel event itself so a bend lands mid-note rather than at the next block boundary. No smoothing — see the rationale at `FloydFMAudioProcessor::updatePitchBend`.
 
 **Envelopes.** `juce::ADSR` is fine for audio, but it has no "value at time t" query, so the display needs its own evaluation function. **These two must not drift.** Put the envelope shape math in one shared header consumed by both the voice and the editor.
 
