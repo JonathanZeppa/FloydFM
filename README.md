@@ -299,7 +299,7 @@ than at the next block boundary so a bend lands mid-note.
 
 ## Changelog
 
-### 2026-08-01 -- per-operator velocity, pitch wheel
+### 0.2.0 -- 2026-08-01 -- per-operator velocity, pitch wheel
 
 - **`OP{n} Velocity`**, four new parameters, one per operator, stored per
   preset. Velocity now drives carriers as well as modulators, weighted per
@@ -312,7 +312,7 @@ than at the next block boundary so a bend lands mid-note.
   and moved its gain-staging tables to velocity 127.
 - Revalidated: pluginval 5, 7, and 10 (three runs at level 10), all passing.
 
-### 2026-07-31 -- initial public release
+### 0.1.0 -- 2026-07-31 -- initial public release
 
 Four operators, eight algorithms, the shared-axis envelope editor, the
 brightness gradient and playhead dots, ten factory presets, VST3 / AU / LV2.
