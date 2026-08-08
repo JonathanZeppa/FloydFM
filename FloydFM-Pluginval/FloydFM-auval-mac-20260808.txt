@@ -1,0 +1,506 @@
+
+    AU Validation Tool
+    Version: 1.10.0 
+    Copyright 2003-2019, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+--------------------------------------------------
+VALIDATING AUDIO UNIT: 'aumu' - 'Flfm' - 'Zedt'
+--------------------------------------------------
+Manufacturer String: Zedtronics
+AudioUnit Name: FloydFM
+Component Version: 0.2.0 (0x200)
+
+* * PASS
+--------------------------------------------------
+TESTING OPEN TIMES:
+COLD:
+Time to open AudioUnit:         119.080 ms
+WARM:
+Time to open AudioUnit:         0.732  ms
+This AudioUnit is a version 2 implementation.
+FIRST TIME:
+Time for initialization:        0.008 ms
+
+* * PASS
+--------------------------------------------------
+VERIFYING DEFAULT SCOPE FORMATS:
+Input Scope Bus Configuration:
+ Default Bus Count:0
+
+Output Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: Output
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+* * PASS
+--------------------------------------------------
+VERIFYING REQUIRED PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING RECOMMENDED PROPERTIES:
+  VERIFYING PROPERTY: Latency
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING OPTIONAL PROPERTIES:
+  VERIFYING PROPERTY: Tail Time
+    PASS
+  VERIFYING PROPERTY: Bypass Effect
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING SPECIAL PROPERTIES:
+
+VERIFYING CUSTOM UI
+Cocoa Views Available: 1
+  JUCE_AUCocoaViewClass_33a7617e2abb46f0
+    PASS
+
+HAS FACTORY PRESETS
+    ID:   0    Name: GLASS BELL
+    ID:   1    Name: E PIANO
+    ID:   2    Name: BRASS
+    ID:   3    Name: WOOD FLUTE
+    ID:   4    Name: METAL HIT
+    ID:   5    Name: SUB BASS
+    ID:   6    Name: ORGAN
+    ID:   7    Name: PLUCK
+    ID:   8    Name: GROWL
+    ID:   9    Name: AIR PAD
+
+VERIFYING CLASS INFO
+    PASS
+
+TESTING HOST CALLBACKS
+    PASS
+
+* * PASS
+--------------------------------------------------
+PUBLISHED PARAMETER INFO:
+
+# # # 37 Global Scope Parameters:
+Parameter ID:47625813
+Name: OP2 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:68031787
+Name: OP1 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:80858492
+Name: OP1 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:225490031
+Name: Algorithm
+Parameter Type: Indexed
+Values: Minimum = ALG 1 STACK, Default = ALG 1 STACK, Maximum = ALG 8 ADDITIVE
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 8
+Value: 0,  String: ALG 1 STACK
+Value: 1,  String: ALG 2 TWIN FEED
+Value: 2,  String: ALG 3 SPLIT MOD
+Value: 3,  String: ALG 4 BRANCH
+Value: 4,  String: ALG 5 TWIN PAIR
+Value: 5,  String: ALG 6 FAN
+Value: 6,  String: ALG 7 PAIR+SINE
+Value: 7,  String: ALG 8 ADDITIVE
+  -parameter PASS
+
+Parameter ID:387654998
+Name: OP3 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:502598968
+Name: OP1 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:583059182
+Name: OP4 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:595885887
+Name: OP4 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:727684183
+Name: OP4 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:823436692
+Name: OP4 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835821429
+Name: OP1 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835841358
+Name: OP1 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836744950
+Name: OP2 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836764879
+Name: OP2 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837668471
+Name: OP3 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.650, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837688400
+Name: OP3 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838591992
+Name: OP4 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.850, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838611921
+Name: OP4 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:842628153
+Name: OP2 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:895490885
+Name: OP4 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:955535468
+Name: OP2 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:968362173
+Name: OP2 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1182657338
+Name: OP3 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228110005
+Name: OP3 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1300164198
+Name: OP3 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1309618022
+Name: Velocity Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.700, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1340495719
+Name: Master
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1522686523
+Name: OP4 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1632783318
+Name: OP2 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1704837511
+Name: OP2 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1843039149
+Name: OP3 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855080276
+Name: OP1 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855865854
+Name: OP3 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1955982213
+Name: Feedback
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2019435191
+Name: Pitch Bend Range
+Parameter Type: Generic
+Values: Minimum = 0, Default = 2, Maximum = 12
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2037456631
+Name: OP1 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2109510824
+Name: OP1 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Testing that parameters retain value across reset and initialization
+  PASS
+
+* * PASS
+--------------------------------------------------
+FORMAT TESTS:
+
+Reported Channel Capabilities (explicit):
+      [0, 2]  
+
+No Input, Output Chans:
+0-1   0-2   0-4   0-5   0-6   0-7   0-8
+      X                                   
+
+# # AudioChannelLayouts (4), Output Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+        X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+* * PASS
+--------------------------------------------------
+RENDER TESTS:
+
+Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Render Test at 512 frames
+Slicing Render Test at 64 frames
+  PASS
+
+
+Render Test at 64 frames, sample rate: 22050 Hz
+Render Test at 137 frames, sample rate: 96000 Hz
+Render Test at 4096 frames, sample rate: 48000 Hz
+Render Test at 4096 frames, sample rate: 192000 Hz
+Render Test at 4096 frames, sample rate: 11025 Hz
+Render Test at 512 frames, sample rate: 44100 Hz
+  PASS
+
+Bad Max Frames - Render should fail
+  PASS
+
+Checking parameter setting
+Using AudioUnitSetParameter
+Using AudioUnitScheduleParameter
+  PASS
+
+Checking ramped parameter scheduling
+  PASS
+
+Test MIDI
+  PASS
+
+* * PASS
+--------------------------------------------------
+AU VALIDATION SUCCEEDED.
+--------------------------------------------------

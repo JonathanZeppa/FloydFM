@@ -1,0 +1,3195 @@
+Started validating: /Library/Audio/Plug-Ins/Components/FloydFM.component
+Random seed: 0x73fe8f5
+Validation started
+	8 Aug 2026 3:00:01pm
+
+Strictness level: 10
+-----------------------------------------------------------------
+Starting tests in: pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component...
+Num plugins found: 1
+
+Testing plugin: AudioUnit-FloydFM-f0631d82-7d7c6f6c
+Zedtronics: FloydFM v0.2.0
+Completed tests in pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (cold)...
+
+Time taken to open plugin (cold): 155 ms
+Completed tests in pluginval / Open plugin (cold)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (warm)...
+
+Time taken to open plugin (warm): 1 ms
+Running tests 1 times
+Completed tests in pluginval / Open plugin (warm)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin info...
+
+Plugin name: FloydFM
+Alternative names: FloydFM
+SupportsDoublePrecision: no
+Reported latency: 0
+Reported taillength: 4
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin info
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin programs...
+Num programs: 10
+Program 0 name: GLASS BELL
+Program 1 name: E PIANO
+Program 2 name: BRASS
+Program 3 name: WOOD FLUTE
+Program 4 name: METAL HIT
+Program 5 name: SUB BASS
+Program 6 name: ORGAN
+Program 7 name: PLUCK
+Program 8 name: GROWL
+Program 9 name: AIR PAD
+All program names checked
+
+Changing program
+Changing program to: 6
+Changing program to: 7
+Changing program to: 7
+Changing program to: 8
+Changing program to: 6
+!!! WARNING: Current program is -1... Is this correct?
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Plugin programs
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor...
+
+Time taken to open editor (cold): 258 ms
+Time taken to open editor (warm): 438 ms
+
+Time taken to run test: 717 ms
+Completed tests in pluginval / Editor
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open editor whilst processing...
+
+Time taken to run test: 212 ms
+Completed tests in pluginval / Open editor whilst processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Non-releasing audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Non-releasing audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state...
+
+Time taken to run test: 0
+Completed tests in pluginval / Plugin state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state restoration...
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin state restoration
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automation...
+Testing with sample rate [44100] and block size [64] and sub-block size [32]
+Testing with sample rate [44100] and block size [128] and sub-block size [32]
+Testing with sample rate [44100] and block size [256] and sub-block size [32]
+Testing with sample rate [44100] and block size [512] and sub-block size [32]
+Testing with sample rate [44100] and block size [1024] and sub-block size [32]
+Testing with sample rate [48000] and block size [64] and sub-block size [32]
+Testing with sample rate [48000] and block size [128] and sub-block size [32]
+Testing with sample rate [48000] and block size [256] and sub-block size [32]
+Testing with sample rate [48000] and block size [512] and sub-block size [32]
+Testing with sample rate [48000] and block size [1024] and sub-block size [32]
+Testing with sample rate [96000] and block size [64] and sub-block size [32]
+Testing with sample rate [96000] and block size [128] and sub-block size [32]
+Testing with sample rate [96000] and block size [256] and sub-block size [32]
+Testing with sample rate [96000] and block size [512] and sub-block size [32]
+Testing with sample rate [96000] and block size [1024] and sub-block size [32]
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor Automation...
+
+Time taken to run test: 12 secs
+Completed tests in pluginval / Editor Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automatable Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 0
+Completed tests in pluginval / Automatable Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Background thread state...
+
+Time taken to run test: 2 secs
+Completed tests in pluginval / Background thread state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameter thread safety...
+
+Time taken to run test: 32 ms
+Completed tests in pluginval / Parameter thread safety
+-----------------------------------------------------------------
+Starting tests in: pluginval / auval...
+
+    AU Validation Tool
+    Version: 1.10.0 
+    Copyright 2003-2019, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+--------------------------------------------------
+VALIDATING AUDIO UNIT: 'aumu' - 'Flfm' - 'Zedt'
+--------------------------------------------------
+Manufacturer String: Zedtronics
+AudioUnit Name: FloydFM
+Component Version: 0.2.0 (0x200)
+
+* * PASS
+--------------------------------------------------
+TESTING OPEN TIMES:
+COLD:
+Time to open AudioUnit:         4.694 ms
+WARM:
+Time to open AudioUnit:         0.467  ms
+This AudioUnit is a version 2 implementation.
+FIRST TIME:
+Time for initialization:        0.005 ms
+
+* * PASS
+--------------------------------------------------
+VERIFYING DEFAULT SCOPE FORMATS:
+Input Scope Bus Configuration:
+ Default Bus Count:0
+
+Output Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: Output
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+* * PASS
+--------------------------------------------------
+VERIFYING REQUIRED PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING RECOMMENDED PROPERTIES:
+  VERIFYING PROPERTY: Latency
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING OPTIONAL PROPERTIES:
+  VERIFYING PROPERTY: Tail Time
+    PASS
+  VERIFYING PROPERTY: Bypass Effect
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING SPECIAL PROPERTIES:
+
+VERIFYING CUSTOM UI
+Cocoa Views Available: 1
+  JUCE_AUCocoaViewClass_2671b3c232fe9eb3
+    PASS
+
+HAS FACTORY PRESETS
+    ID:   0    Name: GLASS BELL
+    ID:   1    Name: E PIANO
+    ID:   2    Name: BRASS
+    ID:   3    Name: WOOD FLUTE
+    ID:   4    Name: METAL HIT
+    ID:   5    Name: SUB BASS
+    ID:   6    Name: ORGAN
+    ID:   7    Name: PLUCK
+    ID:   8    Name: GROWL
+    ID:   9    Name: AIR PAD
+
+VERIFYING CLASS INFO
+    PASS
+
+TESTING HOST CALLBACKS
+    P
+ASS
+
+* * PASS
+--------------------------------------------------
+PUBLISHED PARAMETER INFO:
+
+# # # 37 Global Scope Parameters:
+Parameter ID:47625813
+Name: OP2 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:68031787
+Name: OP1 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:80858492
+Name: OP1 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:225490031
+Name: Algorithm
+Parameter Type: Indexed
+Values: Minimum = ALG 1 STACK, Default = ALG 1 STACK, Maximum = ALG 8 ADDITIVE
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 8
+Value: 0,  String: ALG 1 STACK
+Value: 1,  String: ALG 2 TWIN FEED
+Value: 2,  String: ALG 3 SPLIT MOD
+Value: 3,  String: ALG 4 BRANCH
+Value: 4,  String: ALG 5 TWIN PAIR
+Value: 5,  String: ALG 6 FAN
+Value: 6,  String: ALG 7 PAIR+SINE
+Value: 7,  String: ALG 8 ADDITIVE
+  -parameter PASS
+
+Parameter ID:387654998
+Name: OP3 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:502598968
+N
+ame: OP1 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:583059182
+Name: OP4 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:595885887
+Name: OP4 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:727684183
+Name: OP4 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:823436692
+Name: OP4 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835821429
+Name: OP1 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835841358
+Name: OP1 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836744950
+Name: OP2 Amount
+Parameter Type: G
+eneric
+Values: Minimum = 0.000, Default = 1.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836764879
+Name: OP2 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837668471
+Name: OP3 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.650, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837688400
+Name: OP3 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838591992
+Name: OP4 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.850, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838611921
+Name: OP4 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:842628153
+Name: OP2 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:895490885
+Name: OP4 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:955535468
+Name: OP2 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:968362173
+Name: OP2 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolu
+tion, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1182657338
+Name: OP3 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228110005
+Name: OP3 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1300164198
+Name: OP3 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1309618022
+Name: Velocity Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.700, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1340495719
+Name: Master
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1522686523
+Name: OP4 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1632783318
+Name: OP2 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, 
+Writable 
+  -parameter PASS
+
+Parameter ID:1704837511
+Name: OP2 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1843039149
+Name: OP3 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855080276
+Name: OP1 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855865854
+Name: OP3 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1955982213
+Name: Feedback
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2019435191
+Name: Pitch Bend Range
+Parameter Type: Generic
+Values: Minimum = 0, Default = 2, Maximum = 12
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2037456631
+Name: OP1 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter 
+ID:2109510824
+Name: OP1 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Testing that parameters retain value across reset and initialization
+  PASS
+
+* * PASS
+--------------------------------------------------
+FORMAT TESTS:
+
+Reported Channel Capabilities (explicit):
+      [0, 2]  
+
+No Input, Output Chans:
+0-1   0-2   0-4   0-5   0-6   0-7   0-8
+      X                                   
+
+# # AudioChannelLayouts (4), Output Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+        X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+* * PASS
+--------------------------------------------------
+RENDER TESTS:
+
+Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Render Test at 512 frames
+Slicing Render Test at 64 frames
+  PASS
+
+
+Render Test at 64 frames, sample rate: 22050 Hz
+Render Test at 137 frames, sample rate: 96000 Hz
+Render Test at 4096 frames, sample rate: 48000 Hz
+Render Test at 4096 frames, sample rate: 192000 Hz
+Render Test at 4096 frames, sample rate: 11025 Hz
+Render Test at 512 frames, sample rate: 44100 Hz
+  PASS
+
+Bad Max Frames - Render should fail
+  PASS
+
+Checking parameter setting
+Using AudioUnitSetParameter
+Using AudioUnitScheduleParameter
+  PASS
+
+Checking ramped parameter scheduling
+  PASS
+
+Test MIDI
+  PASS
+
+Stress Test
+Render
+ for 20 seconds of audio at frame size: 512, sample rate: 44100 Hz
+  PASS
+
+* * PASS
+--------------------------------------------------
+AU VALIDATION SUCCEEDED.
+--------------------------------------------------
+
+auval exited with code: 0
+
+Time taken to run test: 593 ms
+Completed tests in pluginval / auval
+-----------------------------------------------------------------
+Starting tests in: pluginval / vst3 validator...
+
+Time taken to run test: 0
+Completed tests in pluginval / vst3 validator
+-----------------------------------------------------------------
+Starting tests in: pluginval / Basic bus...
+Completed tests in pluginval / Basic bus
+-----------------------------------------------------------------
+Starting tests in: pluginval / Listing available buses...
+Inputs:
+	Named layouts: None
+	Discrete layouts: None
+Outputs:
+	Named layouts: Stereo
+	Discrete layouts: None
+Main bus num input channels: 0
+Main bus num output channels: 2
+Completed tests in pluginval / Listing available buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Enabling all buses...
+Completed tests in pluginval / Enabling all buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Disabling non-main busses...
+Completed tests in pluginval / Disabling non-main busses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Restoring default layout...
+Main bus num input channels: 0
+Main bus num output channels: 2
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Restoring default layout
+-----------------------------------------------------------------
+Starting tests in: pluginval / Fuzz parameters...
+Fuzz testing parameter: 0 - OP2 Sustain
+Fuzz testing parameter: 1 - OP1 Decay
+Fuzz testing parameter: 2 - OP1 Ratio
+Fuzz testing parameter: 3 - Algorithm
+Fuzz testing parameter: 4 - OP3 Sustain
+Fuzz testing parameter: 5 - OP1 Release
+Fuzz testing parameter: 6 - OP4 Decay
+Fuzz testing parameter: 7 - OP4 Ratio
+Fuzz testing parameter: 8 - OP4 Sustain
+Fuzz testing parameter: 9 - OP4 Attack
+Fuzz testing parameter: 10 - OP1 Amount
+Fuzz testing parameter: 11 - OP1 Velocity
+Fuzz testing parameter: 12 - OP2 Amount
+Fuzz testing parameter: 13 - OP2 Velocity
+Fuzz testing parameter: 14 - OP3 Amount
+Fuzz testing parameter: 15 - OP3 Velocity
+Fuzz testing parameter: 16 - OP4 Amount
+Fuzz testing parameter: 17 - OP4 Velocity
+Fuzz testing parameter: 18 - OP2 Release
+Fuzz testing parameter: 19 - OP4 Detune
+Fuzz testing parameter: 20 - OP2 Decay
+Fuzz testing parameter: 21 - OP2 Ratio
+Fuzz testing parameter: 22 - OP3 Release
+Fuzz testing parameter: 23 - OP3 Attack
+Fuzz testing parameter: 24 - OP3 Detune
+Fuzz testing parameter: 25 - Velocity Amount
+Fuzz testing parameter: 26 - Master
+Fuzz testing parameter: 27 - OP4 Release
+Fuzz testing parameter: 28 - OP2 Attack
+Fuzz testing parameter: 29 - OP2 Detune
+Fuzz testing parameter: 30 - OP3 Decay
+Fuzz testing parameter: 31 - OP1 Sustain
+Fuzz testing parameter: 32 - OP3 Ratio
+Fuzz testing parameter: 33 - Feedback
+Fuzz testing parameter: 34 - Pitch Bend Range
+Fuzz testing parameter: 35 - OP1 Attack
+Fuzz testing parameter: 36 - OP1 Detune
+
+Time taken to run test: 0
+
+Time taken to run all tests: 16 secs
+Completed tests in pluginval / Fuzz parameters
+SUCCESS
+Started validating: /Library/Audio/Plug-Ins/Components/FloydFM.component
+Random seed: 0x5b583b2
+Validation started
+	8 Aug 2026 3:00:20pm
+
+Strictness level: 10
+-----------------------------------------------------------------
+Starting tests in: pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component...
+Num plugins found: 1
+
+Testing plugin: AudioUnit-FloydFM-f0631d82-7d7c6f6c
+Zedtronics: FloydFM v0.2.0
+Completed tests in pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (cold)...
+
+Time taken to open plugin (cold): 155 ms
+Completed tests in pluginval / Open plugin (cold)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (warm)...
+
+Time taken to open plugin (warm): 2 ms
+Running tests 1 times
+Completed tests in pluginval / Open plugin (warm)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin info...
+
+Plugin name: FloydFM
+Alternative names: FloydFM
+SupportsDoublePrecision: no
+Reported latency: 0
+Reported taillength: 4
+
+Time taken to run test: 0
+Completed tests in pluginval / Plugin info
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin programs...
+Num programs: 10
+Program 0 name: GLASS BELL
+Program 1 name: E PIANO
+Program 2 name: BRASS
+Program 3 name: WOOD FLUTE
+Program 4 name: METAL HIT
+Program 5 name: SUB BASS
+Program 6 name: ORGAN
+Program 7 name: PLUCK
+Program 8 name: GROWL
+Program 9 name: AIR PAD
+All program names checked
+
+Changing program
+Changing program to: 2
+Changing program to: 2
+Changing program to: 8
+Changing program to: 1
+Changing program to: 0
+!!! WARNING: Current program is -1... Is this correct?
+
+Time taken to run test: 3 ms
+Completed tests in pluginval / Plugin programs
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor...
+
+Time taken to open editor (cold): 253 ms
+Time taken to open editor (warm): 437 ms
+
+Time taken to run test: 710 ms
+Completed tests in pluginval / Editor
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open editor whilst processing...
+
+Time taken to run test: 214 ms
+Completed tests in pluginval / Open editor whilst processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Non-releasing audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Non-releasing audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state...
+
+Time taken to run test: 0
+Completed tests in pluginval / Plugin state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state restoration...
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin state restoration
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automation...
+Testing with sample rate [44100] and block size [64] and sub-block size [32]
+Testing with sample rate [44100] and block size [128] and sub-block size [32]
+Testing with sample rate [44100] and block size [256] and sub-block size [32]
+Testing with sample rate [44100] and block size [512] and sub-block size [32]
+Testing with sample rate [44100] and block size [1024] and sub-block size [32]
+Testing with sample rate [48000] and block size [64] and sub-block size [32]
+Testing with sample rate [48000] and block size [128] and sub-block size [32]
+Testing with sample rate [48000] and block size [256] and sub-block size [32]
+Testing with sample rate [48000] and block size [512] and sub-block size [32]
+Testing with sample rate [48000] and block size [1024] and sub-block size [32]
+Testing with sample rate [96000] and block size [64] and sub-block size [32]
+Testing with sample rate [96000] and block size [128] and sub-block size [32]
+Testing with sample rate [96000] and block size [256] and sub-block size [32]
+Testing with sample rate [96000] and block size [512] and sub-block size [32]
+Testing with sample rate [96000] and block size [1024] and sub-block size [32]
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor Automation...
+
+Time taken to run test: 12 secs
+Completed tests in pluginval / Editor Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automatable Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Automatable Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Background thread state...
+
+Time taken to run test: 2 secs
+Completed tests in pluginval / Background thread state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameter thread safety...
+
+Time taken to run test: 31 ms
+Completed tests in pluginval / Parameter thread safety
+-----------------------------------------------------------------
+Starting tests in: pluginval / auval...
+
+    AU Validation Tool
+    Version: 1.10.0 
+    Copyright 2003-2019, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+--------------------------------------------------
+VALIDATING AUDIO UNIT: 'aumu' - 'Flfm' - 'Zedt'
+--------------------------------------------------
+Manufacturer String: Zedtronics
+AudioUnit Name: FloydFM
+Component Version: 0.2.0 (0x200)
+
+* * PASS
+--------------------------------------------------
+TESTING OPEN TIMES:
+COLD:
+Time to open AudioUnit:         4.720 ms
+WARM:
+Time to open AudioUnit:         0.503  ms
+This AudioUnit is a version 2 implementation.
+FIRST TIME:
+Time for initialization:        0.006 ms
+
+* * PASS
+--------------------------------------------------
+VERIFYING DEFAULT SCOPE FORMATS:
+Input Scope Bus Configuration:
+ Default Bus Count:0
+
+Output Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: Output
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+* * PASS
+--------------------------------------------------
+VERIFYING REQUIRED PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING RECOMMENDED PROPERTIES:
+  VERIFYING PROPERTY: Latency
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING OPTIONAL PROPERTIES:
+  VERIFYING PROPERTY: Tail Time
+    PASS
+  VERIFYING PROPERTY: Bypass Effect
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING SPECIAL PROPERTIES:
+
+VERIFYING CUSTOM UI
+Cocoa Views Available: 1
+  JUCE_AUCocoaViewClass_b5ff4f09c9d70731
+    PASS
+
+HAS FACTORY PRESETS
+    ID:   0    Name: GLASS BELL
+    ID:   1    Name: E PIANO
+    ID:   2    Name: BRASS
+    ID:   3    Name: WOOD FLUTE
+    ID:   4    Name: METAL HIT
+    ID:   5    Name: SUB BASS
+    ID:   6    Name: ORGAN
+    ID:   7    Name: PLUCK
+    ID:   8    Name: GROWL
+    ID:   9    Name: AIR PAD
+
+VERIFYING CLASS INFO
+    PASS
+
+TESTING HOST CALLBACKS
+    P
+ASS
+
+* * PASS
+--------------------------------------------------
+PUBLISHED PARAMETER INFO:
+
+# # # 37 Global Scope Parameters:
+Parameter ID:47625813
+Name: OP2 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:68031787
+Name: OP1 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:80858492
+Name: OP1 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:225490031
+Name: Algorithm
+Parameter Type: Indexed
+Values: Minimum = ALG 1 STACK, Default = ALG 1 STACK, Maximum = ALG 8 ADDITIVE
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 8
+Value: 0,  String: ALG 1 STACK
+Value: 1,  String: ALG 2 TWIN FEED
+Value: 2,  String: ALG 3 SPLIT MOD
+Value: 3,  String: ALG 4 BRANCH
+Value: 4,  String: ALG 5 TWIN PAIR
+Value: 5,  String: ALG 6 FAN
+Value: 6,  String: ALG 7 PAIR+SINE
+Value: 7,  String: ALG 8 ADDITIVE
+  -parameter PASS
+
+Parameter ID:387654998
+Name: OP3 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:502598968
+N
+ame: OP1 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:583059182
+Name: OP4 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:595885887
+Name: OP4 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:727684183
+Name: OP4 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:823436692
+Name: OP4 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835821429
+Name: OP1 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835841358
+Name: OP1 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836744950
+Name: OP2 Amount
+Parameter Type: G
+eneric
+Values: Minimum = 0.000, Default = 1.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836764879
+Name: OP2 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837668471
+Name: OP3 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.650, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837688400
+Name: OP3 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838591992
+Name: OP4 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.850, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838611921
+Name: OP4 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:842628153
+Name: OP2 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:895490885
+Name: OP4 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:955535468
+Name: OP2 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:968362173
+Name: OP2 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolu
+tion, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1182657338
+Name: OP3 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228110005
+Name: OP3 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1300164198
+Name: OP3 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1309618022
+Name: Velocity Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.700, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1340495719
+Name: Master
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1522686523
+Name: OP4 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1632783318
+Name: OP2 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, 
+Writable 
+  -parameter PASS
+
+Parameter ID:1704837511
+Name: OP2 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1843039149
+Name: OP3 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855080276
+Name: OP1 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855865854
+Name: OP3 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1955982213
+Name: Feedback
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2019435191
+Name: Pitch Bend Range
+Parameter Type: Generic
+Values: Minimum = 0, Default = 2, Maximum = 12
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2037456631
+Name: OP1 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter 
+ID:2109510824
+Name: OP1 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Testing that parameters retain value across reset and initialization
+  PASS
+
+* * PASS
+--------------------------------------------------
+FORMAT TESTS:
+
+Reported Channel Capabilities (explicit):
+      [0, 2]  
+
+No Input, Output Chans:
+0-1   0-2   0-4   0-5   0-6   0-7   0-8
+      X                                   
+
+# # AudioChannelLayouts (4), Output Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+        X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+* * PASS
+--------------------------------------------------
+RENDER TESTS:
+
+Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Render Test at 512 frames
+Slicing Render Test at 64 frames
+  PASS
+
+
+Render Test at 64 frames, sample rate: 22050 Hz
+Render Test at 137 frames, sample rate: 96000 Hz
+Render Test at 4096 frames, sample rate: 48000 Hz
+Render Test at 4096 frames, sample rate: 192000 Hz
+Render Test at 4096 frames, sample rate: 11025 Hz
+Render Test at 512 frames, sample rate: 44100 Hz
+  PASS
+
+Bad Max Frames - Render should fail
+  PASS
+
+Checking parameter setting
+Using AudioUnitSetParameter
+Using AudioUnitScheduleParameter
+  PASS
+
+Checking ramped parameter scheduling
+  PASS
+
+Test MIDI
+  PASS
+
+Stress Test
+Render
+ for 20 seconds of audio at frame size: 512, sample rate: 44100 Hz
+  PASS
+
+* * PASS
+--------------------------------------------------
+AU VALIDATION SUCCEEDED.
+--------------------------------------------------
+
+auval exited with code: 0
+
+Time taken to run test: 568 ms
+Completed tests in pluginval / auval
+-----------------------------------------------------------------
+Starting tests in: pluginval / vst3 validator...
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / vst3 validator
+-----------------------------------------------------------------
+Starting tests in: pluginval / Basic bus...
+Completed tests in pluginval / Basic bus
+-----------------------------------------------------------------
+Starting tests in: pluginval / Listing available buses...
+Inputs:
+	Named layouts: None
+	Discrete layouts: None
+Outputs:
+	Named layouts: Stereo
+	Discrete layouts: None
+Main bus num input channels: 0
+Main bus num output channels: 2
+Completed tests in pluginval / Listing available buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Enabling all buses...
+Completed tests in pluginval / Enabling all buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Disabling non-main busses...
+Completed tests in pluginval / Disabling non-main busses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Restoring default layout...
+Main bus num input channels: 0
+Main bus num output channels: 2
+
+Time taken to run test: 0
+Completed tests in pluginval / Restoring default layout
+-----------------------------------------------------------------
+Starting tests in: pluginval / Fuzz parameters...
+Fuzz testing parameter: 0 - OP2 Sustain
+Fuzz testing parameter: 1 - OP1 Decay
+Fuzz testing parameter: 2 - OP1 Ratio
+Fuzz testing parameter: 3 - Algorithm
+Fuzz testing parameter: 4 - OP3 Sustain
+Fuzz testing parameter: 5 - OP1 Release
+Fuzz testing parameter: 6 - OP4 Decay
+Fuzz testing parameter: 7 - OP4 Ratio
+Fuzz testing parameter: 8 - OP4 Sustain
+Fuzz testing parameter: 9 - OP4 Attack
+Fuzz testing parameter: 10 - OP1 Amount
+Fuzz testing parameter: 11 - OP1 Velocity
+Fuzz testing parameter: 12 - OP2 Amount
+Fuzz testing parameter: 13 - OP2 Velocity
+Fuzz testing parameter: 14 - OP3 Amount
+Fuzz testing parameter: 15 - OP3 Velocity
+Fuzz testing parameter: 16 - OP4 Amount
+Fuzz testing parameter: 17 - OP4 Velocity
+Fuzz testing parameter: 18 - OP2 Release
+Fuzz testing parameter: 19 - OP4 Detune
+Fuzz testing parameter: 20 - OP2 Decay
+Fuzz testing parameter: 21 - OP2 Ratio
+Fuzz testing parameter: 22 - OP3 Release
+Fuzz testing parameter: 23 - OP3 Attack
+Fuzz testing parameter: 24 - OP3 Detune
+Fuzz testing parameter: 25 - Velocity Amount
+Fuzz testing parameter: 26 - Master
+Fuzz testing parameter: 27 - OP4 Release
+Fuzz testing parameter: 28 - OP2 Attack
+Fuzz testing parameter: 29 - OP2 Detune
+Fuzz testing parameter: 30 - OP3 Decay
+Fuzz testing parameter: 31 - OP1 Sustain
+Fuzz testing parameter: 32 - OP3 Ratio
+Fuzz testing parameter: 33 - Feedback
+Fuzz testing parameter: 34 - Pitch Bend Range
+Fuzz testing parameter: 35 - OP1 Attack
+Fuzz testing parameter: 36 - OP1 Detune
+
+Time taken to run test: 1 ms
+
+Time taken to run all tests: 16 secs
+Completed tests in pluginval / Fuzz parameters
+SUCCESS
+Started validating: /Library/Audio/Plug-Ins/Components/FloydFM.component
+Random seed: 0x5d63976
+Validation started
+	8 Aug 2026 3:00:39pm
+
+Strictness level: 10
+-----------------------------------------------------------------
+Starting tests in: pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component...
+Num plugins found: 1
+
+Testing plugin: AudioUnit-FloydFM-f0631d82-7d7c6f6c
+Zedtronics: FloydFM v0.2.0
+Completed tests in pluginval / Scan for plugins located in: /Library/Audio/Plug-Ins/Components/FloydFM.component
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (cold)...
+
+Time taken to open plugin (cold): 155 ms
+Completed tests in pluginval / Open plugin (cold)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open plugin (warm)...
+
+Time taken to open plugin (warm): 2 ms
+Running tests 1 times
+Completed tests in pluginval / Open plugin (warm)
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin info...
+
+Plugin name: FloydFM
+Alternative names: FloydFM
+SupportsDoublePrecision: no
+Reported latency: 0
+Reported taillength: 4
+
+Time taken to run test: 0
+Completed tests in pluginval / Plugin info
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin programs...
+Num programs: 10
+Program 0 name: GLASS BELL
+Program 1 name: E PIANO
+Program 2 name: BRASS
+Program 3 name: WOOD FLUTE
+Program 4 name: METAL HIT
+Program 5 name: SUB BASS
+Program 6 name: ORGAN
+Program 7 name: PLUCK
+Program 8 name: GROWL
+Program 9 name: AIR PAD
+All program names checked
+
+Changing program
+Changing program to: 2
+Changing program to: 1
+Changing program to: 2
+Changing program to: 5
+Changing program to: 6
+!!! WARNING: Current program is -1... Is this correct?
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Plugin programs
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor...
+
+Time taken to open editor (cold): 250 ms
+Time taken to open editor (warm): 439 ms
+
+Time taken to run test: 713 ms
+Completed tests in pluginval / Editor
+-----------------------------------------------------------------
+Starting tests in: pluginval / Open editor whilst processing...
+
+Time taken to run test: 211 ms
+Completed tests in pluginval / Open editor whilst processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 2 ms
+Completed tests in pluginval / Audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Non-releasing audio processing...
+Testing with sample rate [44100] and block size [64]
+Testing with sample rate [44100] and block size [128]
+Testing with sample rate [44100] and block size [256]
+Testing with sample rate [44100] and block size [512]
+Testing with sample rate [44100] and block size [1024]
+Testing with sample rate [48000] and block size [64]
+Testing with sample rate [48000] and block size [128]
+Testing with sample rate [48000] and block size [256]
+Testing with sample rate [48000] and block size [512]
+Testing with sample rate [48000] and block size [1024]
+Testing with sample rate [96000] and block size [64]
+Testing with sample rate [96000] and block size [128]
+Testing with sample rate [96000] and block size [256]
+Testing with sample rate [96000] and block size [512]
+Testing with sample rate [96000] and block size [1024]
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Non-releasing audio processing
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state...
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Plugin state restoration...
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Plugin state restoration
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automation...
+Testing with sample rate [44100] and block size [64] and sub-block size [32]
+Testing with sample rate [44100] and block size [128] and sub-block size [32]
+Testing with sample rate [44100] and block size [256] and sub-block size [32]
+Testing with sample rate [44100] and block size [512] and sub-block size [32]
+Testing with sample rate [44100] and block size [1024] and sub-block size [32]
+Testing with sample rate [48000] and block size [64] and sub-block size [32]
+Testing with sample rate [48000] and block size [128] and sub-block size [32]
+Testing with sample rate [48000] and block size [256] and sub-block size [32]
+Testing with sample rate [48000] and block size [512] and sub-block size [32]
+Testing with sample rate [48000] and block size [1024] and sub-block size [32]
+Testing with sample rate [96000] and block size [64] and sub-block size [32]
+Testing with sample rate [96000] and block size [128] and sub-block size [32]
+Testing with sample rate [96000] and block size [256] and sub-block size [32]
+Testing with sample rate [96000] and block size [512] and sub-block size [32]
+Testing with sample rate [96000] and block size [1024] and sub-block size [32]
+
+Time taken to run test: 0
+Completed tests in pluginval / Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Editor Automation...
+
+Time taken to run test: 12 secs
+Completed tests in pluginval / Editor Automation
+-----------------------------------------------------------------
+Starting tests in: pluginval / Automatable Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 1 ms
+Completed tests in pluginval / Automatable Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameters...
+
+Testing parameter: 0 - OP2 Sustain
+Parameter info: index - 0, paramName - OP2 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 1 - OP1 Decay
+Parameter info: index - 1, paramName - OP1 Decay, defaultValue - 0.18, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 2 - OP1 Ratio
+Parameter info: index - 2, paramName - OP1 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 3 - Algorithm
+Parameter info: index - 3, paramName - Algorithm, defaultValue - 0, label - , numSteps - 8, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - ALG 1 STACK|ALG 2 TWIN FEED|ALG 3 SPLIT MOD|ALG 4 BRANCH|ALG 5 TWIN PAIR|ALG 6 FAN|ALG 7 PAIR+SINE|ALG 8 ADDITIVE
+Testing accessors
+
+Testing parameter: 4 - OP3 Sustain
+Parameter info: index - 4, paramName - OP3 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 5 - OP1 Release
+Parameter info: index - 5, paramName - OP1 Release, defaultValue - 0.225, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 6 - OP4 Decay
+Parameter info: index - 6, paramName - OP4 Decay, defaultValue - 0.44, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 7 - OP4 Ratio
+Parameter info: index - 7, paramName - OP4 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 8 - OP4 Sustain
+Parameter info: index - 8, paramName - OP4 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 9 - OP4 Attack
+Parameter info: index - 9, paramName - OP4 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 10 - OP1 Amount
+Parameter info: index - 10, paramName - OP1 Amount, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 11 - OP1 Velocity
+Parameter info: index - 11, paramName - OP1 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 12 - OP2 Amount
+Parameter info: index - 12, paramName - OP2 Amount, defaultValue - 1, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 13 - OP2 Velocity
+Parameter info: index - 13, paramName - OP2 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 14 - OP3 Amount
+Parameter info: index - 14, paramName - OP3 Amount, defaultValue - 0.65, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 15 - OP3 Velocity
+Parameter info: index - 15, paramName - OP3 Velocity, defaultValue - 0.95, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 16 - OP4 Amount
+Parameter info: index - 16, paramName - OP4 Amount, defaultValue - 0.85, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 17 - OP4 Velocity
+Parameter info: index - 17, paramName - OP4 Velocity, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 18 - OP2 Release
+Parameter info: index - 18, paramName - OP2 Release, defaultValue - 0.45, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 19 - OP4 Detune
+Parameter info: index - 19, paramName - OP4 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 20 - OP2 Decay
+Parameter info: index - 20, paramName - OP2 Decay, defaultValue - 0.36, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 21 - OP2 Ratio
+Parameter info: index - 21, paramName - OP2 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 22 - OP3 Release
+Parameter info: index - 22, paramName - OP3 Release, defaultValue - 0.15, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 23 - OP3 Attack
+Parameter info: index - 23, paramName - OP3 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 24 - OP3 Detune
+Parameter info: index - 24, paramName - OP3 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 25 - Velocity Amount
+Parameter info: index - 25, paramName - Velocity Amount, defaultValue - 0.7, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 26 - Master
+Parameter info: index - 26, paramName - Master, defaultValue - 0.8, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 27 - OP4 Release
+Parameter info: index - 27, paramName - OP4 Release, defaultValue - 0.55, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 28 - OP2 Attack
+Parameter info: index - 28, paramName - OP2 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 29 - OP2 Detune
+Parameter info: index - 29, paramName - OP2 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 30 - OP3 Decay
+Parameter info: index - 30, paramName - OP3 Decay, defaultValue - 0.12, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 31 - OP1 Sustain
+Parameter info: index - 31, paramName - OP1 Sustain, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 32 - OP3 Ratio
+Parameter info: index - 32, paramName - OP3 Ratio, defaultValue - 0.166667, label - , numSteps - 19, isDiscrete - 1, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 0.25|0.50|0.75|1.00|1.25|1.50|2.00|2.50|3.00|3.50|4.00|5.00|6.00|7.00|8.00|9.00|10.00|11.00|12.00
+Testing accessors
+
+Testing parameter: 33 - Feedback
+Parameter info: index - 33, paramName - Feedback, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 34 - Pitch Bend Range
+Parameter info: index - 34, paramName - Pitch Bend Range, defaultValue - 0.166667, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 35 - OP1 Attack
+Parameter info: index - 35, paramName - OP1 Attack, defaultValue - 0, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Testing parameter: 36 - OP1 Detune
+Parameter info: index - 36, paramName - OP1 Detune, defaultValue - 0.5, label - , numSteps - 2147483647, isDiscrete - 0, isBoolean - 0, isOrientationInverted - 0, isAutomatable - 1, isMetaParameter - 0, category - 0, all value strings - 
+Testing accessors
+
+Time taken to run test: 0
+Completed tests in pluginval / Parameters
+-----------------------------------------------------------------
+Starting tests in: pluginval / Background thread state...
+
+Time taken to run test: 2 secs
+Completed tests in pluginval / Background thread state
+-----------------------------------------------------------------
+Starting tests in: pluginval / Parameter thread safety...
+
+Time taken to run test: 33 ms
+Completed tests in pluginval / Parameter thread safety
+-----------------------------------------------------------------
+Starting tests in: pluginval / auval...
+
+    AU Validation Tool
+    Version: 1.10.0 
+    Copyright 2003-2019, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+--------------------------------------------------
+VALIDATING AUDIO UNIT: 'aumu' - 'Flfm' - 'Zedt'
+--------------------------------------------------
+Manufacturer String: Zedtronics
+AudioUnit Name: FloydFM
+Component Version: 0.2.0 (0x200)
+
+* * PASS
+--------------------------------------------------
+TESTING OPEN TIMES:
+COLD:
+Time to open AudioUnit:         4.838 ms
+WARM:
+Time to open AudioUnit:         0.490  ms
+This AudioUnit is a version 2 implementation.
+FIRST TIME:
+Time for initialization:        0.006 ms
+
+* * PASS
+--------------------------------------------------
+VERIFYING DEFAULT SCOPE FORMATS:
+Input Scope Bus Configuration:
+ Default Bus Count:0
+
+Output Scope Bus Configuration:
+ Default Bus Count:1
+    Bus Name: Output
+    Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+    Has Channel Layouts: 0x650002 0x660002 0x670002 0x6A0002 
+    Default Layout:
+	Tag=0x650002, Num Chan Descs=0
+
+* * PASS
+--------------------------------------------------
+VERIFYING REQUIRED PROPERTIES:
+
+* * PASS
+--------------------------------------------------
+VERIFYING RECOMMENDED PROPERTIES:
+  VERIFYING PROPERTY: Latency
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING OPTIONAL PROPERTIES:
+  VERIFYING PROPERTY: Tail Time
+    PASS
+  VERIFYING PROPERTY: Bypass Effect
+    PASS
+
+* * PASS
+--------------------------------------------------
+VERIFYING SPECIAL PROPERTIES:
+
+VERIFYING CUSTOM UI
+Cocoa Views Available: 1
+  JUCE_AUCocoaViewClass_55f38451bb6aedab
+    PASS
+
+HAS FACTORY PRESETS
+    ID:   0    Name: GLASS BELL
+    ID:   1    Name: E PIANO
+    ID:   2    Name: BRASS
+    ID:   3    Name: WOOD FLUTE
+    ID:   4    Name: METAL HIT
+    ID:   5    Name: SUB BASS
+    ID:   6    Name: ORGAN
+    ID:   7    Name: PLUCK
+    ID:   8    Name: GROWL
+    ID:   9    Name: AIR PAD
+
+VERIFYING CLASS INFO
+    PASS
+
+TESTING HOST CALLBACKS
+    P
+ASS
+
+* * PASS
+--------------------------------------------------
+PUBLISHED PARAMETER INFO:
+
+# # # 37 Global Scope Parameters:
+Parameter ID:47625813
+Name: OP2 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:68031787
+Name: OP1 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:80858492
+Name: OP1 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:225490031
+Name: Algorithm
+Parameter Type: Indexed
+Values: Minimum = ALG 1 STACK, Default = ALG 1 STACK, Maximum = ALG 8 ADDITIVE
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 8
+Value: 0,  String: ALG 1 STACK
+Value: 1,  String: ALG 2 TWIN FEED
+Value: 2,  String: ALG 3 SPLIT MOD
+Value: 3,  String: ALG 4 BRANCH
+Value: 4,  String: ALG 5 TWIN PAIR
+Value: 5,  String: ALG 6 FAN
+Value: 6,  String: ALG 7 PAIR+SINE
+Value: 7,  String: ALG 8 ADDITIVE
+  -parameter PASS
+
+Parameter ID:387654998
+Name: OP3 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:502598968
+N
+ame: OP1 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.900, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:583059182
+Name: OP4 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:595885887
+Name: OP4 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:727684183
+Name: OP4 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:823436692
+Name: OP4 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835821429
+Name: OP1 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:835841358
+Name: OP1 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836744950
+Name: OP2 Amount
+Parameter Type: G
+eneric
+Values: Minimum = 0.000, Default = 1.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:836764879
+Name: OP2 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837668471
+Name: OP3 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.650, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:837688400
+Name: OP3 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.950, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838591992
+Name: OP4 Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.850, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:838611921
+Name: OP4 Velocity
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.550, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:842628153
+Name: OP2 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:895490885
+Name: OP4 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:955535468
+Name: OP2 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 1.800, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:968362173
+Name: OP2 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolu
+tion, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1182657338
+Name: OP3 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1228110005
+Name: OP3 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1300164198
+Name: OP3 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1309618022
+Name: Velocity Amount
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.700, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1340495719
+Name: Master
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.800, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1522686523
+Name: OP4 Release
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 2.200, Maximum = 4.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1632783318
+Name: OP2 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, 
+Writable 
+  -parameter PASS
+
+Parameter ID:1704837511
+Name: OP2 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1843039149
+Name: OP3 Decay
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.600, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855080276
+Name: OP1 Sustain
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:1855865854
+Name: OP3 Ratio
+Parameter Type: Indexed
+Values: Minimum = 0.25, Default = 1.00, Maximum = 12.00
+Flags: Values Have Strings, High Resolution, Readable, Writable 
+Parameter has Value Strings
+Num Strings = 19
+Value: 0,  String: 0.25
+Value: 1,  String: 0.50
+Value: 2,  String: 0.75
+Value: 3,  String: 1.00
+Value: 4,  String: 1.25
+Value: 5,  String: 1.50
+Value: 6,  String: 2.00
+Value: 7,  String: 2.50
+Value: 8,  String: 3.00
+Value: 9,  String: 3.50
+Value: 10,  String: 4.00
+Value: 11,  String: 5.00
+Value: 12,  String: 6.00
+Value: 13,  String: 7.00
+Value: 14,  String: 8.00
+Value: 15,  String: 9.00
+Value: 16,  String: 10.00
+Value: 17,  String: 11.00
+Value: 18,  String: 12.00
+  -parameter PASS
+
+Parameter ID:1955982213
+Name: Feedback
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 1.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2019435191
+Name: Pitch Bend Range
+Parameter Type: Generic
+Values: Minimum = 0, Default = 2, Maximum = 12
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter ID:2037456631
+Name: OP1 Attack
+Parameter Type: Generic
+Values: Minimum = 0.000, Default = 0.000, Maximum = 5.000
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Parameter 
+ID:2109510824
+Name: OP1 Detune
+Parameter Type: Generic
+Values: Minimum = -50.0, Default = 0.0, Maximum = 50.0
+Flags: Values Have Strings, High Resolution, Can Ramp, Readable, Writable 
+  -parameter PASS
+
+Testing that parameters retain value across reset and initialization
+  PASS
+
+* * PASS
+--------------------------------------------------
+FORMAT TESTS:
+
+Reported Channel Capabilities (explicit):
+      [0, 2]  
+
+No Input, Output Chans:
+0-1   0-2   0-4   0-5   0-6   0-7   0-8
+      X                                   
+
+# # AudioChannelLayouts (4), Output Scope:
+ChannelLayout is Writable: T
+The Unit publishes the following Channel Layouts:
+  0x650002, 0x660002, 0x670002, 0x6A0002, 
+
+Is Audio Channel Layout Available:
+Mono    Stereo  Binau.  AU_4    Ambi.   AU_5    AU_5_0  AU_6    AU_6_0  AU_7_0  AU_7_0F AU_8    AU_5_1  AU_6_1  AU_7_1  AU_7_1F 
+        X       X                                                                                                               
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x650002, Successsful
+
+Current Format:AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Current Format Tag = 0x650002, New Format Tag = 0x6A0002, Successsful
+
+* * PASS
+--------------------------------------------------
+RENDER TESTS:
+
+Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+Render Test at 512 frames
+Slicing Render Test at 64 frames
+  PASS
+
+
+Render Test at 64 frames, sample rate: 22050 Hz
+Render Test at 137 frames, sample rate: 96000 Hz
+Render Test at 4096 frames, sample rate: 48000 Hz
+Render Test at 4096 frames, sample rate: 192000 Hz
+Render Test at 4096 frames, sample rate: 11025 Hz
+Render Test at 512 frames, sample rate: 44100 Hz
+  PASS
+
+Bad Max Frames - Render should fail
+  PASS
+
+Checking parameter setting
+Using AudioUnitSetParameter
+Using AudioUnitScheduleParameter
+  PASS
+
+Checking ramped parameter scheduling
+  PASS
+
+Test MIDI
+  PASS
+
+Stress Test
+Render
+ for 20 seconds of audio at frame size: 512, sample rate: 44100 Hz
+  PASS
+
+* * PASS
+--------------------------------------------------
+AU VALIDATION SUCCEEDED.
+--------------------------------------------------
+
+auval exited with code: 0
+
+Time taken to run test: 591 ms
+Completed tests in pluginval / auval
+-----------------------------------------------------------------
+Starting tests in: pluginval / vst3 validator...
+
+Time taken to run test: 0
+Completed tests in pluginval / vst3 validator
+-----------------------------------------------------------------
+Starting tests in: pluginval / Basic bus...
+Completed tests in pluginval / Basic bus
+-----------------------------------------------------------------
+Starting tests in: pluginval / Listing available buses...
+Inputs:
+	Named layouts: None
+	Discrete layouts: None
+Outputs:
+	Named layouts: Stereo
+	Discrete layouts: None
+Main bus num input channels: 0
+Main bus num output channels: 2
+Completed tests in pluginval / Listing available buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Enabling all buses...
+Completed tests in pluginval / Enabling all buses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Disabling non-main busses...
+Completed tests in pluginval / Disabling non-main busses
+-----------------------------------------------------------------
+Starting tests in: pluginval / Restoring default layout...
+Main bus num input channels: 0
+Main bus num output channels: 2
+
+Time taken to run test: 0
+Completed tests in pluginval / Restoring default layout
+-----------------------------------------------------------------
+Starting tests in: pluginval / Fuzz parameters...
+Fuzz testing parameter: 0 - OP2 Sustain
+Fuzz testing parameter: 1 - OP1 Decay
+Fuzz testing parameter: 2 - OP1 Ratio
+Fuzz testing parameter: 3 - Algorithm
+Fuzz testing parameter: 4 - OP3 Sustain
+Fuzz testing parameter: 5 - OP1 Release
+Fuzz testing parameter: 6 - OP4 Decay
+Fuzz testing parameter: 7 - OP4 Ratio
+Fuzz testing parameter: 8 - OP4 Sustain
+Fuzz testing parameter: 9 - OP4 Attack
+Fuzz testing parameter: 10 - OP1 Amount
+Fuzz testing parameter: 11 - OP1 Velocity
+Fuzz testing parameter: 12 - OP2 Amount
+Fuzz testing parameter: 13 - OP2 Velocity
+Fuzz testing parameter: 14 - OP3 Amount
+Fuzz testing parameter: 15 - OP3 Velocity
+Fuzz testing parameter: 16 - OP4 Amount
+Fuzz testing parameter: 17 - OP4 Velocity
+Fuzz testing parameter: 18 - OP2 Release
+Fuzz testing parameter: 19 - OP4 Detune
+Fuzz testing parameter: 20 - OP2 Decay
+Fuzz testing parameter: 21 - OP2 Ratio
+Fuzz testing parameter: 22 - OP3 Release
+Fuzz testing parameter: 23 - OP3 Attack
+Fuzz testing parameter: 24 - OP3 Detune
+Fuzz testing parameter: 25 - Velocity Amount
+Fuzz testing parameter: 26 - Master
+Fuzz testing parameter: 27 - OP4 Release
+Fuzz testing parameter: 28 - OP2 Attack
+Fuzz testing parameter: 29 - OP2 Detune
+Fuzz testing parameter: 30 - OP3 Decay
+Fuzz testing parameter: 31 - OP1 Sustain
+Fuzz testing parameter: 32 - OP3 Ratio
+Fuzz testing parameter: 33 - Feedback
+Fuzz testing parameter: 34 - Pitch Bend Range
+Fuzz testing parameter: 35 - OP1 Attack
+Fuzz testing parameter: 36 - OP1 Detune
+
+Time taken to run test: 1 ms
+
+Time taken to run all tests: 16 secs
+Completed tests in pluginval / Fuzz parameters
+SUCCESS
