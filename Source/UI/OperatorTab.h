@@ -128,7 +128,8 @@ public:
         // cannot wash over it. Uses the operator's identity colour at
         // reduced alpha -- identity colour never changes, and dimming it
         // keeps the label subordinate to the tab itself.
-        const auto roleArea = juce::Rectangle<float> (pill.getX(), pill.getBottom(),
+        const auto roleArea = juce::Rectangle<float> (pill.getX(),
+                                                      pill.getBottom() + (float) Layout::TAB_ROLE_GAP,
                                                       pill.getWidth(), (float) Layout::TAB_ROLE_H);
 
         Text::drawTrackedCentred (g, carrier ? "CARRIER" : "MODULATOR",

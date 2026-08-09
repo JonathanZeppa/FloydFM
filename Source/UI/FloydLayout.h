@@ -36,7 +36,13 @@ inline constexpr float TAB_BORDER = 2.0f;
 // CARRIER / MODULATOR role label under each tab (added 2026-07-26 for FM
 // education). Drawn inside the tab component, in the band between the
 // pill's bottom edge (y=54) and the algorithm column's top (y=68).
-inline constexpr int TAB_ROLE_H = 14;
+// TAB_ROLE_GAP drops the band 2px clear of the pill (support ticket
+// 2026-08-09: label sat tight against the tab and was hard to read).
+// The band still ends inside the tab component's glow margin (y=70),
+// and the 10px text bottoms out at y=68, flush with but not into the
+// algorithm caption row.
+inline constexpr int TAB_ROLE_GAP = 2;
+inline constexpr int TAB_ROLE_H   = 14;
 
 // --- Algorithm column ------------------------------------------------
 // Handoff row: "Algorithm column".

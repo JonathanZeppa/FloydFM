@@ -98,7 +98,9 @@ inline constexpr Spec holdLabel    { 12.5f, 2.0f,  Weight::medium   };
 // they have selected is heard directly or only heard through what it
 // modulates -- which is also why the left slider reads LEVEL vs DEPTH.
 inline constexpr Spec caption      {  9.0f, 1.6f,  Weight::semiBold };
-inline constexpr Spec opRole       {  9.0f, 1.2f,  Weight::medium   };
+// opRole 9 -> 10px, support ticket 2026-08-09 (reading-glasses user;
+// paired with TAB_ROLE_GAP in FloydLayout.h).
+inline constexpr Spec opRole       { 10.0f, 1.2f,  Weight::medium   };
 
 inline juce::Font of (const Spec& s) { return montserrat (s.px, s.weight); }
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include "../DSP/Algorithm.h"
@@ -24,7 +26,9 @@
 //
 //    Edges: 1.6px #4A5570 from bottom-centre of source to top-centre of
 //    destination, with an 8x8 triangle at the midpoint pointing toward
-//    the destination.
+//    the destination, rotated to lie along the line (support ticket
+//    2026-08-09: fixed vertical arrowheads on diagonal lines were
+//    ambiguous).
 //
 //  Reads kAlgorithms directly -- there is no parallel table for the
 //  visual (handoff, "Single source of truth").
@@ -80,13 +84,20 @@ public:
             g.setColour (Colours::diagramEdge);
             g.drawLine (x1, y1, x2, y2, 1.6f);
 
-            // Direction triangle at the midpoint. Destinations are always
-            // on a lower row, so the triangle always points down.
+            // Direction triangle at the midpoint, rotated so its axis
+            // follows the edge. Built pointing straight down (the
+            // vertical-edge case), then rotated by the line's deviation
+            // from vertical -- on a diagonal edge an unrotated arrowhead
+            // reads as ambiguous.
             const float mx = (x1 + x2) * 0.5f;
             const float my = (y1 + y2) * 0.5f;
 
+            const float lineAngle = std::atan2 (y2 - y1, x2 - x1);
+
             juce::Path tri;
             tri.addTriangle (mx - 4.0f, my - 4.0f, mx + 4.0f, my - 4.0f, mx, my + 4.0f);
+            tri.applyTransform (juce::AffineTransform::rotation (
+                lineAngle - juce::MathConstants<float>::halfPi, mx, my));
             g.setColour (Colours::diagramArrow);
             g.fillPath (tri);
         }
