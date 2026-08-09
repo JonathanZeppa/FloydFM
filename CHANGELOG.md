@@ -40,7 +40,7 @@ source gets them today.
 - Pitch wheel support with adjustable bend range.
 - macOS release 2026-08-08: notarized Universal AU + VST3 installer.
 
-## [0.1.0] - 2026-07-26
+## [0.1.0] - 2026-07-31
 
 - Initial release: 4-operator FM synth, 8 algorithms, 10 factory
   presets, envelope brightness gradient (2026-07-30), VST3 / AU / LV2.

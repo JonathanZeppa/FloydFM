@@ -299,6 +299,37 @@ than at the next block boundary so a bend lands mid-note.
 
 ## Changelog
 
+Also kept as [`CHANGELOG.md`](CHANGELOG.md).
+
+### Unreleased -- response to the first user feedback report (2026-08-09)
+
+An LV2 user on Ubuntu Studio (jalv, built from source) sent visual
+feedback with no reply address -- thank you! The fixes are in source now
+and will be part of the next tagged release; building from source gets
+them today.
+
+- **Routing diagram arrowheads now rotate to lie along their connection
+  line.** Previously every arrowhead pointed straight down, which made
+  diagonal connections ambiguous.
+- **CARRIER / MODULATOR labels under the operator tabs moved down**,
+  clear of the tab pill, and grew from 9px to 10px so they no longer
+  crowd the buttons.
+
+Answers to the report's other notes:
+
+- **Fonts a bit small in general:** the panel zooms. Drag the window
+  corner (resize the window in jalv) and the whole UI scales from 0.75x
+  to 2.0x, fonts included.
+- **jalv's window title only updates when a preset is picked from the
+  preset menu, not from the in-plugin arrows:** correct observation, and
+  it is host-side. The plugin's arrows change the program internally, and
+  LV2 has no plugin-to-host program-change notification, so jalv cannot
+  know. The plugin's own preset bar always shows the current name.
+- **No VST3 produced by the Linux build:** the Linux instructions above
+  only build the LV2 target. On Linux,
+  `cmake --build build --target FloydFM_VST3` works too and produces a
+  VST3 that VST3 hosts (Bitwig, REAPER, etc.) can load.
+
 ### 0.2.0 -- 2026-08-01 -- per-operator velocity, pitch wheel
 
 - **`OP{n} Velocity`**, four new parameters, one per operator, stored per
