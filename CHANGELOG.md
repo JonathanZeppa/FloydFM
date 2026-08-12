@@ -2,12 +2,13 @@
 
 All notable changes to FloydFM are documented here.
 
-## [Unreleased]
+## [0.2.1] - 2026-08-12
 
 The changes below respond to the first user feedback report (2026-08-09,
-from an LV2 user on Ubuntu Studio running jalv -- thank you!). They are
-in source now and will be part of the next tagged release; building from
-source gets them today.
+from an LV2 user on Ubuntu Studio running jalv -- thank you!). Windows
+VST3 and Windows LV2 binaries ship these fixes; the macOS package and the
+Raspberry Pi (Rust) LV2 bundles are unaffected or pending (the Pi build
+has no JUCE UI, and the Mac 0.2.1 build follows in a Mac session).
 
 ### Changed
 

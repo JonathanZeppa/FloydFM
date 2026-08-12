@@ -301,12 +301,13 @@ than at the next block boundary so a bend lands mid-note.
 
 Also kept as [`CHANGELOG.md`](CHANGELOG.md).
 
-### Unreleased -- response to the first user feedback report (2026-08-09)
+### 0.2.1 -- 2026-08-12 -- response to the first user feedback report (2026-08-09)
 
 An LV2 user on Ubuntu Studio (jalv, built from source) sent visual
-feedback with no reply address -- thank you! The fixes are in source now
-and will be part of the next tagged release; building from source gets
-them today.
+feedback with no reply address -- thank you! Windows VST3 and Windows
+LV2 downloads carry these fixes as of 0.2.1; the Raspberry Pi (Rust)
+LV2 bundles have no JUCE UI and are unaffected, and the macOS 0.2.1
+package follows.
 
 - **Routing diagram arrowheads now rotate to lie along their connection
   line.** Previously every arrowhead pointed straight down, which made
