@@ -33,3 +33,6 @@ screenshots/
 # belongs in a repo that may go public.
 floydfm-logfile.md
 CLAUDE.md
+
+# Built installers/zips live here per the 2026-08-12 ruling; binaries stay out of git
+installers/
