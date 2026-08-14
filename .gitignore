@@ -39,4 +39,6 @@ installers/
 
 # Internal reference art + generated installer art (references internal tooling
 # and paths) -- kept on disk, never published. Same class as screenshots/.
-art/
+# art/ is the REFERENCE folder -- tracked, not ignored (fleet unification
+# 2026-08-14). Ignoring it silently swallows anything dropped in later, which is
+# the one class of file here that cannot be regenerated.
