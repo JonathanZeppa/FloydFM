@@ -19,5 +19,23 @@ read goes here.
 
 ## What does NOT belong here
 
-- Build artefacts. This folder is inputs and references (plus the generated
-  installer art, which is committed so the .iss can reference it).
+- Build output (`build/`, `build-tools/`) and scratch renders from dev tooling.
+
+## This folder IS tracked in git (fleet-unified 2026-08-14)
+
+Generated installer art -- the `.ico`, both wizard `.bmp` files, the icon PNGs and the
+macOS PKG background -- is committed alongside the reference material. Regenerate it with:
+
+    python D:\Zedtronics\audacious\tools\make_installer_art.py <PluginKey>
+
+then commit the result.
+
+**Do not add a `*.png` ignore here.** The case for ignoring generated art is that it can
+be regenerated, and that was false until 2026-08-14: the brand sources the generator reads
+were fifteen unversioned loose files at the company root. They now live in
+`audacious\brand\`, and BOTH halves must stay committed for the claim to hold.
+
+A `*.png` rule is also the wrong instrument. Wizard art is `.bmp` and icons are `.ico`, so
+it misses most generated art while catching the photos, mockups and dropped-in screenshots
+that genuinely cannot be regenerated -- ignoring what must be kept and keeping what could
+be rebuilt.
