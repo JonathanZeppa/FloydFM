@@ -14,10 +14,14 @@ param(
     [string] $Target = "",
     # NOT -Pv: PowerShell reserves that as an alias for -PipelineVariable and the call
     # fails before the gate starts.
-    [string] $PluginvalExe = "D:\Zedtronics\tools\pluginval\pluginval.exe"
+    [string] $PluginvalExe = "D:\Zedtronics\tools\pluginval\pluginval.exe",
+    # Forwarded to the shared gate (added 2026-08-15): without this, the
+    # clobber-refusal's own "re-run with -Force" instruction failed at the
+    # wrapper layer with a parameter-binding error.
+    [switch] $Force
 )
 
 & "D:\Zedtronics\audacious\tools\run_win_gate.ps1" `
     -Plugin "FloydFM" -Label $Label -Target $Target -PluginvalExe $PluginvalExe `
-    -RepoDir $PSScriptRoot\..
+    -RepoDir $PSScriptRoot\.. -Force:$Force
 exit $LASTEXITCODE
